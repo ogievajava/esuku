@@ -11,12 +11,10 @@ public class init {
 			System.out.println(counter);
 		}
 
-		
 		for (counter = 1; counter <= 5; counter++) {
 			System.out.println(counter);
 		}
 
-		
 		for (counter = 1; counter <= 5; counter++) {
 			if (counter % 2 != 0) { 
 				System.out.println(counter);
