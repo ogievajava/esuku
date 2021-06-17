@@ -21,14 +21,14 @@
 			<tr class="w3-black w3-hover-teal">
 
 				<td> id</td>
-				<td> name</td>
-				<td> surname </td>
+				<td> Name</td>
+				<td> Surname </td>
 				<td> Address </td>
-				<td> function</td>
-				<td> email</td>
-				<td> password</td>
-				<td> age</td>
-				<td> donation</td>
+				<td> Function</td>
+				<td> Email</td>
+				<td> Password</td>
+				<td> Age</td>
+				<td> Donation</td>
 			</tr>
 
 			<tr th:each="member:${memberListfromControllerAndDB}">
@@ -43,6 +43,16 @@
 				<td th:text="${member.password}"></td>
 				<td th:text="${member.age}"> </td>
 				<td th:text="${member.donation}"> </td>
+					<td>
+				<a th:href="@{deleteMember(id=${member.id})}"
+					class="w3-button w3-red">Delete</a> 
+				<a
+					th:href="@{detailMember(title=${member.id})}"
+					class="w3-button w3-teal">Detail</a> 
+				<a
+					th:href="@{updateMember(title=${member.id})}"
+					class="w3-button w3-blue">Update</a>
+				</td>
 
 			</tr>
 		</table>

@@ -1,0 +1,35 @@
+package com.example.organization;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {	
+	
+	@RequestMapping("/home")
+	public String home () {
+		return "home.html";
+	}
+	
+	@RequestMapping("/topics")
+	public String todoTopics () {
+		return "topics";
+	}
+	
+	@RequestMapping({"*", "member/*"})
+	public String notFound (Model model) {
+		
+		
+		String pattern = "yyyy-MM-dd HH:mm:ssZ";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+		model.addAttribute("serverTime", simpleDateFormat.format(new Date()));
+		
+		return "notFound.html";
+	}
+		
+
+
+}
