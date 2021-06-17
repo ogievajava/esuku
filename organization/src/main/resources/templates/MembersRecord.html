@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<title>Member Record</title>
+</head>
+
+<body>
+
+	<div class="w3-panel w3-padding-32">
+		<h1>Child Help Education Organisation</h1>
+		<h3>Table of Sponsors And Members</h3>
+
+		<table class="w3-table-all">
+
+			<tr class="w3-black w3-hover-teal">
+
+				<td> id</td>
+				<td> name</td>
+				<td> surname </td>
+				<td> Address </td>
+				<td> function</td>
+				<td> email</td>
+				<td> password</td>
+				<td> age</td>
+				<td> donation</td>
+			</tr>
+
+			<tr th:each="member:${memberListfromControllerAndDB}">
+
+
+				<td th:text="${member.id}"></td>
+				<td th:text="${member.name}"></td>
+				<td th:text="${member.surname}"></td>
+				<td th:text="${member.address}"></td>
+				<td th:text="${member.function}"></td>
+				<td th:text="${member.email}"></td>
+				<td th:text="${member.password}"></td>
+				<td th:text="${member.age}"> </td>
+				<td th:text="${member.donation}"> </td>
+
+			</tr>
+		</table>
+	</div>
+</html>
