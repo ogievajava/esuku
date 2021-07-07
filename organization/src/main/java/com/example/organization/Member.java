@@ -16,24 +16,21 @@ public class Member {
 	public String name;
 	public String surname;
 	public String address;
-	public String function;
 	public String email;
 	public String password;
 	public int age;
 	public double donation;
 	
 	//private List<Expense> expenses;
-	
 	public Member() {
-		super();}
+			super();}
 	
-	public Member(String name, String surname, String address, String function, String email,String password, int age, double donation) {
+	public Member(String name, String surname, String address, String email, String password, int age, double donation) {
 		super();
 		
 		this.name = name;
 		this.surname = surname;
 		this.address = address;
-		this.function = function;
 		this.email = email;
 		this.password = password;
 		this.age = age;
@@ -73,13 +70,7 @@ public class Member {
 		this.address = address;
 	}
 
-	public String getFunction() {
-		return function;
-	}
 
-	public void setFunction(String function) {
-		this.function = function;
-	}
 
 	public String getEmail() {
 		return email;
@@ -115,8 +106,7 @@ public class Member {
 
 	@Override
 	public String toString() {
-		return "Member [id=" + id + ", name=" + name + ", surname=" + surname + ", address=" + address + ", function="
-				+ function + ", email=" + email + ", password=" + password + ", age=" + age + ", donation=" + donation
+		return "Member [id=" + id + ", name=" + name + ", surname=" + surname + ", address=" + address + ", email=" + email + ", password=" + password + ", age=" + age + ", donation=" + donation
 				+ "]";
 	}
 	
