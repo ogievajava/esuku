@@ -19,13 +19,13 @@ public class Member {
 	public String email;
 	public String password;
 	public int age;
-	public double donation;
+	public double amount;
 	
 	//private List<Expense> expenses;
 	public Member() {
 			super();}
 	
-	public Member(String name, String surname, String address, String email, String password, int age, double donation) {
+	public Member(String name, String surname, String address, String email, String password, int age, double amount) {
 		super();
 		
 		this.name = name;
@@ -34,7 +34,7 @@ public class Member {
 		this.email = email;
 		this.password = password;
 		this.age = age;
-		this.donation = donation;
+		this.amount = amount;
 		
 	}
 
@@ -96,17 +96,17 @@ public class Member {
 		this.age = age;
 	}
 
-	public double getDonation() {
-		return donation;
+	public double getAmount() {
+		return amount;
 	}
 
-	public void setDonation(double donation) {
-		this.donation = donation;
+	public void setAmount(double amount) {
+		this.amount = amount;
 	}
 
 	@Override
 	public String toString() {
-		return "Member [id=" + id + ", name=" + name + ", surname=" + surname + ", address=" + address + ", email=" + email + ", password=" + password + ", age=" + age + ", donation=" + donation
+		return "Member [id=" + id + ", name=" + name + ", surname=" + surname + ", address=" + address + ", email=" + email + ", password=" + password + ", age=" + age + ", amount =" + amount
 				+ "]";
 	}
 	

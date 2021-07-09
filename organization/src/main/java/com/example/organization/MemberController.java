@@ -109,8 +109,8 @@ public class MemberController {
 				memberFound.get().setEmail(member.getEmail());
 			if (member.getAge() != 0)
 				memberFound.get().setAge(member.getAge());
-			if (member.getDonation() != 0.0)
-				memberFound.get().setDonation(member.getDonation());
+			if (member.getAmount() != 0.0)
+				memberFound.get().setAmount(member.getAmount());
 
 			memberRepository.save(memberFound.get());
 			return "redirect:/member/allMember";

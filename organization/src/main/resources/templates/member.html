@@ -7,14 +7,14 @@
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<title>Member Record</title>
+<title>Client Record</title>
 </head>
 
 <body>
 
 	<div class="w3-panel w3-padding-32">
-		<h1>Child Help Education Organisation</h1>
-		<h3>Table of Sponsors And Members</h3>
+		<h1>Ogieva Supermarket</h1>
+		<h3>Table Of Registered Clients</h3>
 
 		<table class="w3-table-all">
 
@@ -27,7 +27,7 @@
 				<td> Email</td>
 				<td> Password</td>
 				<td> Age</td>
-				<td> Donation</td>
+				<td> Amount</td>
 			</tr>
 
 			<tr th:each="member:${memberListfromControllerAndDB}">
@@ -38,7 +38,7 @@
 				<td th:text="${member.email}"></td>
 				<td th:text="${member.password}"></td>
 				<td th:text="${member.age}"> </td>
-				<td th:text="${member.donation}"> </td>
+				<td th:text="${member.amount}"> </td>
 					<td>
 				<a th:href="@{deleteMember(id=${member.id})}"
 					class="w3-button w3-red">Delete</a> 
