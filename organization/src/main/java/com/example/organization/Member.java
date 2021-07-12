@@ -70,8 +70,6 @@ public class Member {
 		this.address = address;
 	}
 
-
-
 	public String getEmail() {
 		return email;
 	}
@@ -107,7 +105,7 @@ public class Member {
 	@Override
 	public String toString() {
 		return "Member [id=" + id + ", name=" + name + ", surname=" + surname + ", address=" + address + ", email=" + email + ", password=" + password + ", age=" + age + ", amount =" + amount
-				+ "]";
+				+ "]\n";
 	}
 	
 	

@@ -103,10 +103,12 @@ public class MemberController {
 				memberFound.get().setName(member.getName());
 			if (member.getSurname() != null)
 				memberFound.get().setSurname(member.getSurname());
-			if (member.getPassword() != null)
-				memberFound.get().setPassword(member.getPassword());
+			if (member.getAddress() != null)
+				memberFound.get().setAddress(member.getAddress());
 			if (member.getEmail() != null)
 				memberFound.get().setEmail(member.getEmail());
+			if (member.getPassword() != null)
+				memberFound.get().setPassword(member.getPassword());
 			if (member.getAge() != 0)
 				memberFound.get().setAge(member.getAge());
 			if (member.getAmount() != 0.0)

@@ -2,9 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE"></title>
 <style>
 body {
 	margin: 0;
@@ -80,24 +82,19 @@ body {
 }
 </style>
 
-
-<head>
-
-<title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE"></title>
 </head>
 
 <body>
 
 	<!-- Main Navigation -->
 	
-
 		<div class="topnav" id="myTopnav">
 			<a class="active" th:href="@{/home/}">Ogieva Supermarket</a>
-			<!--  <a th:href="@{/member/allMember}">All products in stock</a> -->
+			<a th:href="@{/member/allMember}">All products in stock</a> 
 			<a th:href="@{/member/newMember}">Be a client</a>
-		 <!--  <a th:href="@{/fillin}">Fill in</a>  -->
+		 	 <a th:href="@{/fillin}">Fill in</a> 
 			
-			<!-- <a th:href="@{/expense/allExpenses}">All orders</a>-->
+			<a th:href="@{/expense/allExpenses}">All orders</a>
 			<a th:href="@{/expense/newExpense}">Make an order</a>
 			
 			<a	onclick="document.getElementById('id02').style.display='block'"
