@@ -88,7 +88,10 @@ public class HomeController {
 					 */
 
 			
-			expenseRepository.save(new Expense(faker.beer().name(),
+			expenseRepository.save(new Expense(
+					"dfg",
+					faker.beer().name(),
+					faker.number().numberBetween(1, 1000),
 					faker.date().birthday(0, 3), 
 					faker.number().randomDouble(2, 50, 2000)));
 

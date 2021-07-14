@@ -77,8 +77,8 @@ public class MemberController {
 	}
 
 	//-----------------------update----------------------------------
-	@RequestMapping("/updateEmployee")
-	public String updateEmpoyee(int id, Model model) {
+	@RequestMapping("/updateMember")
+	public String updateMember(int id, Model model) {
 
 		Optional<Member> memberFound = findOneMemberById(id);
 
@@ -131,7 +131,7 @@ public class MemberController {
 		if (memberFound.isPresent()) {
 
 			model.addAttribute("memberfromController", memberFound.get());
-			return "detailMember";
+			return "detailMember.html";
 		}
 
 		else

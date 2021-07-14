@@ -8,15 +8,59 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <title>Member </title>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+#myInput {
+	background-image: url('/css/searchicon.png');
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	width: 50%;
+	font-size: 16px;
+	padding: 12px 20px 12px 40px;
+	border: 1px solid #ddd;
+	margin-bottom: 12px;
+}
+</style>
+
+<script>
+			function myFunction() {
+				var input, filter, table, tr, td, cell, i, j;
+				input = document.getElementById("myInput");
+				filter = input.value.toUpperCase();
+				table = document.getElementById("myTable");
+				tr = table.getElementsByTagName("tr");
+				for (i = 1; i < tr.length; i++) {
+					// Hide the row initially.
+					tr[i].style.display = "none";
+
+					td = tr[i].getElementsByTagName("td");
+					for (var j = 0; j < td.length; j++) {
+						cell = tr[i].getElementsByTagName("td")[j];
+						if (cell) {
+							if (cell.innerHTML.toUpperCase().indexOf(filter) > -1) {
+								tr[i].style.display = "";
+								break;
+							}
+						}
+					}
+				}
+			}
+		</script>
+		
 </head>
 
 <body>
 
 	<div class="w3-panel w3-padding-32">
-		<h1>Ogieva Supermarket</h1>
-		<h3>Table Of Registered Clients</h3>
-
-		<table class="w3-table-all">
+		<h1>Table Of Supermarket Clients</h1>
+			<input type="text" id="myInput" onkeyup="myFunction()"
+				placeholder="Search for anything.." title="Type in a name">
+	
+	
+		<table class="w3-table-all" id="myTable">
 
 			<tr class="w3-black w3-hover-teal">
 
@@ -43,14 +87,15 @@
 				<a th:href="@{deleteMember(id=${member.id})}"
 					class="w3-button w3-red">Delete</a> 
 				<a
-					th:href="@{detailMember(title=${member.id})}"
+					th:href="@{detailMember(id=${member.id})}"
 					class="w3-button w3-teal">Detail</a> 
 				<a
-					th:href="@{updateMember(title=${member.id})}"
+					th:href="@{updateMember(id=${member.id})}"
 					class="w3-button w3-blue">Update</a>
 				</td>
 
 			</tr>
 		</table>
-	</div>
+		<div>
+</body>
 </html>

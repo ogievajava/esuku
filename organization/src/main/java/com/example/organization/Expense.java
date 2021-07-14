@@ -17,6 +17,8 @@ public class Expense {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String name;
+	private String product;
+	private int quantity;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date date;
 	private double value;
@@ -25,10 +27,12 @@ public class Expense {
 	public Expense() {
 		super();
 	}
-	public Expense(String name, Date date, double value) {
+	public Expense(String name, String product, int quantity, Date date, double value) {
 		super();
 	
 		this.name = name;
+		this.name = product;
+		this.quantity = quantity;
 		this.date = date;
 		this.value = value;
 	}
@@ -44,13 +48,24 @@ public class Expense {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getProduct() {
+		return product;
+	}
+	public void setProduct(String product) {
+		this.product = product;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 	public double getValue() {
 		return value;
 	}
 	public void setValue(double value) {
 		this.value = value;
 	}
-	
 	
 	public Date getDate() {
 		return date;
@@ -60,7 +75,7 @@ public class Expense {
 	}
 	@Override
 	public String toString() {
-		return "Expense [id=" + id + ", name=" + name + ", date=" + date + ", value=" + value + "]";
+		return "Expense [id=" + id + ", name=" + name + ", product=" + product + ", quantity= " + quantity + ", date=" + date + ", value=" + value + "]";
 	}
 	
 

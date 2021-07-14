@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 		//----------------------- read ---------------------------------
 		@RequestMapping("/allExpense")
-		public String getAllEmployee(Model boxToView) {
+		public String getAllExpense(Model boxToView) {
 			
 			boxToView.addAttribute("expensefromController", expenseRepository.findAll() );
 			
@@ -99,6 +99,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 				if (expense.getName() != null)
 					expenseFound.get().setName(expense.getName());
 				
+				if (expense.getProduct() != null)
+					expenseFound.get().setProduct(expense.getProduct());
+				
+				if (expense.getQuantity() != 0)
+					expenseFound.get().setQuantity(expense.getQuantity());
 				
 				if (expense.getValue() != 0.0)
 					expenseFound.get().setValue(expense.getValue());
