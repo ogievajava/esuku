@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+	
 <head>
 <title> Fillin New Member</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,17 +11,31 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+	
+	<style>
+	h1{
+		font-size:5vw;
+  	text-align: center;
+  	font-weight:bolder;
+  	text-shadow:1px 2px 0 #fff;
+  	color:grey;
+	}
+	</style>
 
 </head>
 <body>
-	<div class="w3-container w3-card ">
-		<h2>Fill in and delete database</h2>
-		<p>Options ...</p>
-	</div>
-	<div class="w3-container w3-card-4 w3-display-middle w3-center"
-		style="width: 50%;">
 
+<div layout:fragment="content">
 
+<div class="w3-panel w3-center"><h1>Fill In & Delete Database </h1></div>
+
+<div class="w3-container w3-center">
+
+	<div class=" w3-card-4 w3-center">
+
+			<p>Options ...</p>
 		<p>How many members do you want to create?</p>
 		<a th:href="@{/fillinNewMember(qtyToCreate=10)}"
 			class="w3-button w3-teal">Create 10 members</a>
@@ -43,6 +61,7 @@
 		<p></p>
 	
 	</div>
-
+</div>
+</div>
 </body>
 </html>

@@ -1,18 +1,46 @@
-<html xmlns:th="http://www.thymeleaf.org">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+	
+	<head>
+	<title>Create new member</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+		<style>
+		h1 {
+  	font-size:5vw;
+  	text-align: center;
+  	font-weight:bolder;
+  	text-shadow:1px 2px 0 #fff;
+  	color:black;
+ 	}
 
-<head>
-<meta charset="ISO-8859-1">
-<title>Create new member</title>
-</head>
+	* {
+	box-sizing: border-box;
+	}
+	#mainbody {
+	background-color:lightgrey;
+	border-radius:25px;
+	}
+		</style>
+ </head>
+
 <body>
 
+<div layout:fragment="content" >
 
-	<div class="w3-panel w3-padding-32">
-		<h3>Ogieva Supermarket</h3>
-		<p>Client registration</p>
-		<form action="addMember">
+
+
+		<div class="w3-panel"><h1>Register To Be A Client </h1></div>
+		
+	<div class="w3-container w3-padding w3-round-large w3-margin">
+	
+		<form action="addMember" class="w3-card-4 w3-container w3-padding w3-round-large w3-margin">
 
 			<p>
 				<label class="w3-text-gray"><b>Name</b></label> <input
@@ -52,9 +80,10 @@
 				<button class="w3-btn w3-black">Submit form</button>
 			</p>
 		</form>
-
+</div>
 	</div>
 
 
 </body>
 </html>
+

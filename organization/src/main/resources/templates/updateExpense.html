@@ -3,6 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layout}">
+	
 <head>
 <title>Update Expenses</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,19 +11,38 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+	<style>
+		h1 {
+  	font-size:5vw;
+  	text-align: center;
+  	font-weight:bolder;
+  	text-shadow:1px 2px 0 #fff;
+  	color:teal;
+ 	}
+
+	* {
+	box-sizing: border-box;
+	}
+	#mainbody {
+	background-color:lightgrey;
+	border-radius:25px;
+	}
+	</style>
+
 </head>
 
 <body>
 
 	<div layout:fragment="content">
 		
-			<div class="w3-container w3-card-4 w3-display-middle"
-				style="width: 50%;">
-
-				<p>Update order to the H2 DB</p>
+		
+		<div class="w3-panel"><h1>Update Client Purchase</h1></div>
+		<div class="w3-container w3-padding w3-round-large w3-margin">
 				<form action="#"
 					th:action="@{/expense/replaceExpense/{idFromView}(idFromView=${expensefromController.id})}"
-					th:object="${expensefromController}" method="post">
+					th:object="${expensefromController}" method="post" class="w3-container w3-padding w3-round-large w3-margin w3-pale-green">
 
 
 					<p>

@@ -17,27 +17,28 @@
 
 <div layout:fragment="content">
 	
-
-<div class="w3-card-4 w3-display-middle" style="width: 40%"
-	th:each="member:${memberfromController}">
+<div class="w3-container w3-padding w3-round-large w3-margin">
+<div class="w3-container w3-padding w3-round-large w3-margin" th:each="member:${memberfromController}">
 	<header class="w3-container w3-light-grey">
 		<h3 th:text="${member.name} + ' ' + ${member.surname}"></h3>
 
 	</header>
-	<div class="w3-container">
+	<div class="w3-container w3-card-4">
 		<p>1 new friend request</p>
 		<p></p>
 		<hr>
-		<img src="/img/img_avatar.jpg" alt="Avatar"
-			class="w3-left w3-circle w3-margin-right" style="width: 60px">
-		<p>CEO at Mighty Schools. Marketing and Advertising. Seeking a new
-			job and new opportunities.</p>
-		<br>
-		<p th:text="${member.email}"></p>
-		<p th:text="${member.password}"></p>
-		<p th:text="${member.age}"></p>
-		<p th:text="${member.amount}"></p>
 		
+		<img src="https://shmector.com/_ph/4/209265408.png" alt="Avatar"
+			class="w3-third w3-circle w3-margin" style="width:25%">
+			
+		<p class="w3-two-third w3-margin w3-padding">CEO at Mighty Schools. Marketing and Advertising. Seeking a new
+			job and new opportunities. Have worked in several projects and establishements with 7 years experience in marketing</p>
+		<ul class="w3-ul w3-round-large  w3-sand w3-padding-24">
+		<li th:text="${member.email}"></li>
+		<li th:text="${member.password}"></li>
+		<li th:text="${member.age}"></li>
+		<li th:text="${member.amount}"></li>
+		</ul>
 		<hr>
 		<div class="w3-container w3-center">
 			<a th:href="@{deleteMember(id=${member.id})}"
@@ -52,7 +53,7 @@
 </div>
 
 </div>
-
+</div>
 
 </body>
 </html>

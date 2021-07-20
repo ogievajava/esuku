@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE"></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
 <style>
 body {
 	margin: 0;
@@ -80,6 +83,15 @@ body {
 	color: white;
 	text-align: center;
 }
+	#headlogo{
+	font-family:Tahoma;
+	font-weight: bolder;
+	text-shadow:1px 2px 0 #ffffff;
+	background-image: linear-gradient(to top right, white, white, green);
+	color:teal;
+	font-size:3vw;
+	}
+
 </style>
 
 </head>
@@ -89,14 +101,12 @@ body {
 	<!-- Main Navigation -->
 	
 		<div class="topnav" id="myTopnav">
-			<a class="active" th:href="@{/home/}">Ogieva Supermarket</a>
+			<a class="active" th:href="@{/home/}" id="headlogo">OGIEVA SUPERMARKET</a>
 			<a th:href="@{/member/allMember}">All Clients</a> 
 			<a th:href="@{/member/newMember}">Be a client</a>
 		 	 <a th:href="@{/fillin}">Fill in</a> 
-			
 			<a th:href="@{/expense/allExpense}">All orders</a>
-			<a th:href="@{/expense/newExpense}">Make an order</a>
-			
+			<a th:href="@{/expense/newExpense}" ><button> Make an order</button></a>	
 			<a	onclick="document.getElementById('id02').style.display='block'"
 				class="w3-bar-item w3-button w3-mobile w3-right">Sign In </a> 
 			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -113,7 +123,6 @@ body {
 				}
 			}
 		</script>
-
 
 		<!-- Cart info -->
 		<div id="id02" class="w3-modal">
@@ -133,12 +142,13 @@ body {
 	<!-- Content Section -->
 	<section layout:fragment="content">
 		<p>This is filled by the content template.</p>
+		
 	</section>
 
 	<!-- Footer -->
 	<footer>
 		<div class="footer">
-			<p>2020 Java Spring with Layout Thymeleaf By Ogieva K. E. All rights reserved.</p>
+			<p>Java Spring with Layout Thymeleaf By Ogieva @ 2021</p>
 		</div>
 	</footer>
 

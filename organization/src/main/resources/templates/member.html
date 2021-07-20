@@ -1,14 +1,29 @@
 
 <!DOCTYPE html>
-
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
 
 <head>
-<meta charset="ISO-8859-1">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <title>Member </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
 <style>
+
+   h1 {
+  		font-size:5vw;
+  	text-align: center;
+  	font-weight:bolder;
+  	text-shadow:1px 2px 0 #fff;
+  	color:black;
+ }
+
 * {
 	box-sizing: border-box;
 }
@@ -22,48 +37,26 @@
 	padding: 12px 20px 12px 40px;
 	border: 1px solid #ddd;
 	margin-bottom: 12px;
+
 }
 </style>
 
-<script>
-			function myFunction() {
-				var input, filter, table, tr, td, cell, i, j;
-				input = document.getElementById("myInput");
-				filter = input.value.toUpperCase();
-				table = document.getElementById("myTable");
-				tr = table.getElementsByTagName("tr");
-				for (i = 1; i < tr.length; i++) {
-					// Hide the row initially.
-					tr[i].style.display = "none";
-
-					td = tr[i].getElementsByTagName("td");
-					for (var j = 0; j < td.length; j++) {
-						cell = tr[i].getElementsByTagName("td")[j];
-						if (cell) {
-							if (cell.innerHTML.toUpperCase().indexOf(filter) > -1) {
-								tr[i].style.display = "";
-								break;
-							}
-						}
-					}
-				}
-			}
-		</script>
-		
 </head>
 
 <body>
+<div layout:fragment="content">
 
-	<div class="w3-panel w3-padding-32">
-		<h1>Table Of Supermarket Clients</h1>
+
+		<div class="w3-panel"><h1>Table Of Supermarket Clients</h1></div>
+			<div class="w3-center">
 			<input type="text" id="myInput" onkeyup="myFunction()"
 				placeholder="Search for anything.." title="Type in a name">
+		</div>
 	
-	
-		<table class="w3-table-all" id="myTable">
+	<div class="w3-container w3-padding w3-round-large w3-margin">
+		<table class="w3-card-4 w3-table w3-pale-blue" id="myTable" >
 
 			<tr class="w3-black w3-hover-teal">
-
 				<td> id</td>
 				<td> Name</td>
 				<td> Surname </td>
@@ -96,6 +89,34 @@
 
 			</tr>
 		</table>
-		<div>
+		</div>
+		
+<script>
+			function myFunction() {
+				var input, filter, table, tr, td, cell, i, j;
+				input = document.getElementById("myInput");
+				filter = input.value.toUpperCase();
+				table = document.getElementById("myTable");
+				tr = table.getElementsByTagName("tr");
+				for (i = 1; i < tr.length; i++) {
+					// Hide the row initially.
+					tr[i].style.display = "none";
+
+					td = tr[i].getElementsByTagName("td");
+					for (var j = 0; j < td.length; j++) {
+						cell = tr[i].getElementsByTagName("td")[j];
+						if (cell) {
+							if (cell.innerHTML.toUpperCase().indexOf(filter) > -1) {
+								tr[i].style.display = "";
+								break;
+							}
+						}
+					}
+				}
+			}
+		</script>
+		
+		</div>
+
 </body>
 </html>

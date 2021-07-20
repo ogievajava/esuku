@@ -3,14 +3,48 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{layout}">
+	
 <head>
 <title>New Expenses</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+	
+	<script>
+		
+	   	var h1text = "New Client Purchase";
+		var  i = 0;
+	    var speed = 50;
+		function writerh1() {
+        if (i < h1text.length) {
+            document.getElementById("h1show").innerHTML += h1text.charAt(i);
+            i++;
+            setTimeout(writerh1, speed);
+        }      
+    }
+	</script>
+	
+	<style>
+		h1 {
+  	font-size:5vw;
+  	text-align: center;
+  	font-weight:bolder;
+  	text-shadow:1px 2px 0 #fff;
+  	color:black;
+ 	}
+
+	* {
+	box-sizing: border-box;
+	}
+	#mainbody {
+	background-color:lightgreen;
+	border-radius:25px;
+	}
+		</style>
 
 </head>
 
@@ -18,14 +52,13 @@
 
 <div layout:fragment="content">
 
-<div class="w3-panel w3-padding-32">
+	<div class="w3-panel">
+<button onclick="writerh1()"> open</button>
+	<h1 id="h1show"></h1></div>
+		
+	<div class="w3-container w3-padding w3-round-large w3-margin">
 	
-
-	<div class="w3-container w3-card-4 w3-display-middle"
-		style="width: 50%;">
-
-		<p class="w3-tag w3-xxlarge w3-padding w3-teal w3-center">Order Of Purchase</p>
-		<form action="addExpense">
+		<form action="addExpense" class="w3-card-4 w3-container w3-padding w3-round-large w3-margin">
 			<p>
 				<label class="w3-text-gray"><b>Names</b></label> <input
 					class="w3-input w3-border w3-light-grey" name="name"
@@ -61,7 +94,7 @@
 		</form>
 	</div>
 </div>
-</div>
+
 
 </body>
 </html>
