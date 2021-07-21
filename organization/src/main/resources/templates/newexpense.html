@@ -13,29 +13,8 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     
-	
-	<script>
 		
-	   	var h1text = "New Client Purchase";
-		var  i = 0;
-	    var speed = 50;
-		function writerh1() {
-        if (i < h1text.length) {
-            document.getElementById("h1show").innerHTML += h1text.charAt(i);
-            i++;
-            setTimeout(writerh1, speed);
-        }      
-    }
-	</script>
-	
 	<style>
-		h1 {
-  	font-size:5vw;
-  	text-align: center;
-  	font-weight:bolder;
-  	text-shadow:1px 2px 0 #fff;
-  	color:black;
- 	}
 
 	* {
 	box-sizing: border-box;
@@ -44,6 +23,26 @@
 	background-color:lightgreen;
 	border-radius:25px;
 	}
+	
+        #mT h1 {
+        	text-align:center;
+        	font-size: 5vw;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+            overflow: hidden;
+            margin: 5px;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+      
+        @keyframes typing {
+            from {
+                width: 0
+            }
+            to {
+                width: 100%
+            }
+        }
 		</style>
 
 </head>
@@ -53,8 +52,8 @@
 <div layout:fragment="content">
 
 	<div class="w3-panel">
-<button onclick="writerh1()"> open</button>
-	<h1 id="h1show"></h1></div>
+
+	<div id="mT"> <h1>New client puchase </h1> </div>
 		
 	<div class="w3-container w3-padding w3-round-large w3-margin">
 	
